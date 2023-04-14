@@ -1,0 +1,63 @@
+<!--    video 9 input and output (card) -->
+
+<div class="container">
+  <div class="row ">
+    <div class="col-md-4 offset-sm-4">
+        <!-- <app-posts [postInfo]="postInfo[2]" *ngFor="let post of postInfo"></app-posts> -->
+        <app-posts [postInfo]="post" *ngFor="let post of postInfo"></app-posts>
+    </div>
+  </div>
+</div>
+
+<h1 class="bg-warning text-center mt-5"> cards </h1>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6 ">
+      <div class="form-group">
+        <label for="fname">First Name</label>
+        <input type="text" [(ngModel)]="fnameValue" id="fname" class="form-control" [ngStyle]="{ color:'yellow'}">
+      </div>
+      <div class="form-group">
+        <label for="lname">Last Name </label>
+        <input type="text" [(ngModel)]="lnameValue"  id="lname" class="form-control" [ngStyle]="{color:'yellow'}">
+      </div>
+      <div class="form-group">
+        <label for="email" >Email</label>
+        <input type="text" [(ngModel)]="emailValue" id="email" class="form-control" [ngStyle]="{color:'yellow'}">
+      </div>
+      <div class="form-group">
+        <label for="Contact" >Contact</label>
+        <input type="text" [(ngModel)]="contactvallue" id="Contact" class="form-control" [ngStyle]="{color:'yellow'}">
+      </div>
+      <div class="text-right">
+        <button class="btn btn-primary" (click)="onAddStudent()">
+             Add Student
+        </button>
+      </div>
+    </div>
+ 
+    <div class="col-md-6 mt-5">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th> Sr No </th>
+            <th> First Name </th>
+            <th> Last Name </th>
+            <th> Email </th>        
+            <th> Contact </th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let std of stdArray; index as i">
+            <td>{{i + 1}} </td>
+            <td>{{std.fname}} </td>
+            <td>{{std.lname}} </td>
+            <td>{{std.email}} </td>
+            <td>{{std.contact}} </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
